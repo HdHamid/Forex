@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Forex</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{6ac032be-a97f-4dac-a0ba-e5713963266b}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Forex</RootNamespace>
+    <AssemblyName>Forex</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Calc\" />
+    <Folder Include="Calc\Tables\" />
+    <Folder Include="History\" />
+    <Folder Include="History\Tables\" />
+    <Folder Include="Operation\" />
+    <Folder Include="Operation\Tables\" />
+    <Folder Include="Temp\" />
+    <Folder Include="Temp\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Temp\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Operation\Stored Procedures\" />
+    <Folder Include="Common\" />
+    <Folder Include="Common\Stored Procedures\" />
+    <Folder Include="Calc\Stored Procedures\" />
+    <Folder Include="Test\" />
+    <Folder Include="Test\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Temp\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\DimDate.sql" />
+    <Build Include="dbo\Tables\CheckResult.sql" />
+    <Build Include="dbo\Tables\EURUSD_H1.sql" />
+    <Build Include="dbo\Tables\EURUSD_M15.sql" />
+    <Build Include="dbo\Tables\EURUSD_H4_TMP.sql" />
+    <Build Include="dbo\Tables\EURUSD_H1_TMP.sql" />
+    <Build Include="dbo\Tables\HistoryExported.sql" />
+    <Build Include="Calc\Tables\KnnGroupsRes.sql" />
+    <Build Include="dbo\Tables\DailyResult_temp.sql" />
+    <Build Include="dbo\Tables\EURUSD_D1.sql" />
+    <Build Include="dbo\Tables\EURUSD_Daily.sql" />
+    <Build Include="dbo\Tables\EURUSD_H1_History.sql" />
+    <Build Include="dbo\Tables\EURUSD_H4.sql" />
+    <Build Include="dbo\Tables\EURUSD_M30.sql" />
+    <Build Include="dbo\Tables\EURUSD_W.sql" />
+    <Build Include="dbo\Tables\GroupsToReggression.sql" />
+    <Build Include="dbo\Tables\H4.sql" />
+    <Build Include="dbo\Tables\Regression.sql" />
+    <Build Include="dbo\Tables\ResDay.sql" />
+    <Build Include="dbo\Tables\ResH1.sql" />
+    <Build Include="dbo\Tables\ResH4.sql" />
+    <Build Include="dbo\Tables\ResM30.sql" />
+    <Build Include="dbo\Tables\ResW.sql" />
+    <Build Include="History\Tables\HistoryFromMTDetail.sql" />
+    <Build Include="History\Tables\HistoryFromMTDetail_SharkFirstStable.sql" />
+    <Build Include="Operation\Tables\WeeklyInfo.sql" />
+    <Build Include="dbo\Tables\WeeklyFullFeature.sql" />
+    <Build Include="Temp\Tables\ForexFund.sql" />
+    <Build Include="dbo\Tables\ForexFund.sql" />
+    <Build Include="dbo\Views\Vw_PbiDailyReport.sql" />
+    <Build Include="dbo\Views\Vw_CheckDataDateDiff.sql" />
+    <Build Include="dbo\Views\Vw_EURUSD_M15.sql" />
+    <Build Include="dbo\Views\VW_USD_H4.sql" />
+    <Build Include="dbo\Views\VW_USD_H1.sql" />
+    <Build Include="dbo\Views\HistoryFromMT.sql" />
+    <Build Include="dbo\Views\HistoryFromMTDetail.sql" />
+    <Build Include="Temp\Views\VW_ForexFund.sql" />
+    <Build Include="dbo\Views\Vw_ClassesAvgFeatures.sql" />
+    <Build Include="dbo\Functions\MathMax.sql" />
+    <Build Include="dbo\Functions\MathMin.sql" />
+    <Build Include="Operation\Stored Procedures\Chandelier_Exit.sql" />
+    <Build Include="Operation\Stored Procedures\GetWeeklyCondition.sql" />
+    <Build Include="Common\Stored Procedures\PivotFinder.sql" />
+    <Build Include="Calc\Stored Procedures\WeeklyChandelier_Exit.sql" />
+    <Build Include="Calc\Stored Procedures\PivotFinder.sql" />
+    <Build Include="Test\Stored Procedures\GetWeeklyConditions.sql" />
+    <Build Include="Operation\Stored Procedures\Scalp.sql" />
+    <Build Include="Operation\Stored Procedures\Robot_SharkZone_Active_Scalp.sql" />
+    <Build Include="dbo\Stored Procedures\Chandelier_Exit.VertradingView.sql" />
+    <Build Include="Operation\Stored Procedures\_Robot_SharkZone_Active_Chandelier_Exit.sql" />
+    <Build Include="Operation\Stored Procedures\Robot_SharkZone_Active.sql" />
+    <Build Include="Calc\Stored Procedures\CalcRegression.sql" />
+    <Build Include="Calc\Stored Procedures\FeatureEnginiering.sql" />
+    <Build Include="Calc\Stored Procedures\KnnGroups.sql" />
+    <Build Include="Calc\Stored Procedures\KnnGroups_WithGraph_Expired.sql" />
+    <Build Include="Calc\Stored Procedures\prepareGroupsToReggression.sql" />
+    <Build Include="dbo\Stored Procedures\AssociationRoles.sql" />
+    <Build Include="Operation\Stored Procedures\LiveFillWeekly.sql" />
+    <Build Include="dbo\Stored Procedures\FullFeatures.sql" />
+    <Build Include="Operation\Stored Procedures\AlgoWeeklyRegression.sql" />
+    <Build Include="dbo\Stored Procedures\FullFeatures_14010319.sql" />
+    <Build Include="Operation\Stored Procedures\Robot_SharkZone_Active_Ver01.sql" />
+    <Build Include="dbo\Stored Procedures\GetCurrentClass.sql" />
+    <Build Include="dbo\Stored Procedures\Robot_SharkZone_Active__.sql" />
+    <Build Include="dbo\Stored Procedures\Robot_SharkZone_FirstStable.sql" />
+    <Build Include="dbo\Stored Procedures\Robot_SharkZone_Ver01.sql" />
+    <Build Include="dbo\Stored Procedures\Robot_TrendBase_Active.sql" />
+    <Build Include="Operation\Stored Procedures\FillHistoryExported.sql" />
+    <Build Include="Operation\Stored Procedures\GetLastDateTime_H1.sql" />
+    <Build Include="Operation\Stored Procedures\Ins_H1.sql" />
+    <Build Include="Operation\Stored Procedures\SlTpTrailing.sql" />
+    <Build Include="Test\Stored Procedures\Capital.sql" />
+    <Build Include="Test\Stored Procedures\FinalResult.sql" />
+    <Build Include="Test\Stored Procedures\TestStrategy.sql" />
+    <Build Include="Operation\Stored Procedures\SellPosition.sql" />
+    <Build Include="Temp\Stored Procedures\GetDataFromTestForexFund.sql" />
+    <Build Include="Operation\Stored Procedures\BuyPosition.sql" />
+    <Build Include="Operation\Stored Procedures\Stch.sql" />
+    <Build Include="Test\Stored Procedures\GetClass.sql" />
+    <Build Include="dbo\Stored Procedures\GetLongTermRegression.sql" />
+    <Build Include="dbo\Stored Procedures\GetMidTermRegression.sql" />
+    <Build Include="dbo\Stored Procedures\FundProcess.sql" />
+    <Build Include="dbo\Stored Procedures\GetShortTermRegression.sql" />
+    <Build Include="Test\Stored Procedures\GetLMSCorelations.sql" />
+    <Build Include="Calc\Stored Procedures\FillWeekly.sql" />
+    <Build Include="Calc\Stored Procedures\FILL_WeeklyFullFeature.sql" />
+    <Build Include="dbo\User Defined Types\Pvt.sql" />
+    <Build Include="Security\Calc.sql" />
+    <Build Include="Security\Common.sql" />
+    <Build Include="Security\History.sql" />
+    <Build Include="Security\Operation.sql" />
+    <Build Include="Security\Temp.sql" />
+    <Build Include="Security\Test.sql" />
+  </ItemGroup>
+</Project>
